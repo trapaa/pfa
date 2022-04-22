@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Medecin} from '../../medecin'
 import { MedService } from '../../med.service';
+import {  Router } from '@angular/router';
 
 @Component({
   selector: 'app-medecin',
@@ -12,7 +13,7 @@ med:Medecin
 message:any
 
 
-  constructor(private MedService:MedService) { 
+  constructor(private MedService:MedService,private router:Router) { 
     
   }
 
@@ -22,7 +23,7 @@ message:any
       .subscribe(data => {
             
         console.log(data )    })
-       
+        this.router.navigate(['/admin']);
         
   }
   
